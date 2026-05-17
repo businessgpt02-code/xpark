@@ -278,13 +278,15 @@ export default function Courts() {
                       </a>
 
                       {/* Book Court solid CTA with neon sweep glow */}
-                      <Link 
-                        to="/contact"
+                      <a 
+                        href="https://wa.me/971554488072"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="w-full sm:w-auto bg-padel-emerald text-padel-base font-semibold hover:bg-white font-inter text-[10px] uppercase tracking-wider px-4 py-3 rounded-lg flex items-center justify-center gap-1.5 shadow-[0_0_20px_rgba(20,184,89,0.15)] hover:shadow-[0_0_28px_rgba(255,255,255,0.25)] transition-all duration-300"
                       >
                         <span className="whitespace-nowrap">Book Court</span>
                         <ArrowRight size={11} className="shrink-0" />
-                      </Link>
+                      </a>
 
                     </div>
 
