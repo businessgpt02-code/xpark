@@ -145,7 +145,7 @@ function FacilityCard({ facility, index }) {
   const isInView = useInView(cardRef, { once: true, margin: '-60px' });
 
   return (
-    <motion.div
+    <motion.li
       ref={cardRef}
       initial={{ opacity: 0, y: 48, scale: 0.95 }}
       animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
@@ -194,7 +194,7 @@ function FacilityCard({ facility, index }) {
 
       {/* Bottom emerald line — slides in on hover */}
       <div className="absolute bottom-0 left-0 h-px w-0 group-hover:w-full bg-gradient-to-r from-padel-emerald via-padel-emerald/50 to-transparent transition-all duration-700 ease-[0.16,1,0.3,1] z-10" />
-    </motion.div>
+    </motion.li>
   );
 }
 
@@ -205,11 +205,31 @@ export default function FacilitiesSection() {
   const headerRef = useRef(null);
   const isHeaderInView = useInView(headerRef, { once: true, margin: '-80px' });
 
+  // JSON-LD Structured Data for SEO
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "SportsActivityLocation",
+    "name": "XPARK Padel Academy",
+    "description": "Everything you need for a comfortable, safe, and premium padel experience in Dubai. Our facilities include refreshments, parking, first aid, gear rental, and pristine washrooms.",
+    "amenityFeature": facilities.map(f => ({
+      "@type": "LocationFeatureSpecification",
+      "name": f.name,
+      "description": f.desc,
+      "value": true
+    }))
+  };
+
   return (
     <section
       className="relative overflow-hidden bg-padel-surface py-6 lg:py-8"
       aria-label="XPARK Padel Academy Facilities"
     >
+      {/* Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       {/* Court-line background */}
       <CourtPattern />
 
@@ -272,18 +292,18 @@ export default function FacilitiesSection() {
         {/* ── Cards grid ── */}
         {/*  7 cards: 4 on first row desktop (4-col), 3 on second (centred).
             Mobile: 1 col → Tablet: 2 col → Desktop: 4 col             */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-5">
+        <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-5">
           {facilities.slice(0, 4).map((facility, i) => (
             <FacilityCard key={facility.name} facility={facility} index={i} />
           ))}
-        </div>
+        </ul>
 
         {/* Second row — 3 cards centred on desktop */}
-        <div className="mt-4 lg:mt-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5 lg:mx-auto lg:max-w-[75%]">
+        <ul className="mt-4 lg:mt-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5 lg:mx-auto lg:max-w-[75%]">
           {facilities.slice(4).map((facility, i) => (
             <FacilityCard key={facility.name} facility={facility} index={i + 4} />
           ))}
-        </div>
+        </ul>
 
         {/* ── Bottom badge row ── */}
         <motion.div

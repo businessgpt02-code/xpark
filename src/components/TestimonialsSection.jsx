@@ -145,7 +145,7 @@ const categoryColor = {
 ───────────────────────────────────────────── */
 function TestimonialCard({ t }) {
   return (
-    <div
+    <article
       className="group flex-shrink-0 w-[340px] md:w-[380px] mx-3 relative flex flex-col gap-5 p-7 rounded-2xl
                  border border-white/[0.06] bg-padel-charcoal/50 backdrop-blur-xl overflow-hidden
                  cursor-default transition-all duration-500
@@ -174,9 +174,9 @@ function TestimonialCard({ t }) {
       </div>
 
       {/* Quote text */}
-      <p className="relative z-10 font-inter text-[14px] leading-[1.8] text-gray-400 group-hover:text-gray-300 transition-colors duration-500 flex-grow">
+      <blockquote className="relative z-10 font-inter text-[14px] leading-[1.8] text-gray-400 group-hover:text-gray-300 transition-colors duration-500 flex-grow">
         "{t.quote}"
-      </p>
+      </blockquote>
 
       {/* Bottom — name + category */}
       <div className="relative z-10 flex items-end justify-between pt-3 border-t border-white/[0.05]">
@@ -200,7 +200,7 @@ function TestimonialCard({ t }) {
 
       {/* Slide-in bottom line */}
       <div className="absolute bottom-0 left-0 h-px w-0 group-hover:w-full bg-gradient-to-r from-padel-emerald via-padel-emerald/40 to-transparent transition-all duration-700 ease-[0.16,1,0.3,1] z-10" />
-    </div>
+    </article>
   );
 }
 
@@ -265,11 +265,37 @@ export default function TestimonialsSection() {
   const headerRef = useRef(null);
   const isHeaderInView = useInView(headerRef, { once: true, margin: '-80px' });
 
+  // JSON-LD Structured Data for SEO
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "SportsActivityLocation",
+    "name": "XPARK Padel Academy",
+    "review": testimonials.map(t => ({
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": t.name
+      },
+      "reviewBody": t.quote,
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": t.stars.toString(),
+        "bestRating": "5"
+      }
+    }))
+  };
+
   return (
     <section
       className="relative overflow-hidden bg-padel-surface py-6 lg:py-8"
       aria-label="XPARK Padel Academy Player Testimonials"
     >
+      {/* Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       {/* ── Ambient glows ── */}
       <div className="absolute inset-0 pointer-events-none z-0">
         <div className="absolute -top-24 left-1/3 w-[50vw] h-[40vw] bg-padel-emerald/18 rounded-full blur-[120px]" />

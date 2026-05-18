@@ -71,8 +71,24 @@ export default function Courts() {
         <div className="absolute bottom-0 left-10 w-[35vw] h-[35vw] bg-padel-emerald/4 rounded-full blur-[100px]" />
       </div>
 
-      {/* ── Monumental Full-Widescreen Cinematic Hero Section (Synced with About Hero) ── */}
       <section className="relative w-full h-[85vh] min-h-[600px] flex items-center justify-center overflow-hidden border-b border-white/[0.05] pt-20">
+        {/* Structured Data for Courts Page */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "SportsActivityLocation",
+              "name": "XPARK Padel Academy Courts",
+              "description": "Book premium indoor and outdoor padel courts in Dubai. World-class facilities with professional lighting and climate control.",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Dubai",
+                "addressCountry": "AE"
+              }
+            })
+          }}
+        />
         
         {/* Cinematic Widescreen Visual Backing */}
         <div className="absolute inset-0 z-0">
@@ -128,18 +144,28 @@ export default function Courts() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.3, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
-            className="text-[11vw] md:text-[8vw] lg:text-[6.5vw] font-cinzel text-white uppercase leading-[0.95] tracking-tight mb-8"
+            className="text-[11vw] md:text-[8vw] lg:text-[6.5vw] font-cinzel text-white uppercase leading-[0.95] tracking-tight mb-6"
           >
-            Elite Padel <br />
+            Premium Padel <br />
             <span className="text-gradient-emerald glow-text-emerald font-light italic text-[12vw] md:text-[9vw] lg:text-[7vw]">Courts Dubai.</span>
           </motion.h1>
+
+          {/* SEO Structured Subtitle/Description */}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
+            className="font-inter text-sm md:text-base text-gray-300 leading-relaxed max-w-2xl mb-8"
+          >
+            Book the best professional padel courts in Dubai at XPARK Padel Academy. We offer premium indoor and climate-controlled courts, world-class outdoor venues, and top-tier facilities across the UAE.
+          </motion.p>
 
           {/* Glassmorphic Luxury Credentials Stamp */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.35 }}
-            className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 backdrop-blur-md bg-padel-charcoal/20 border border-white/5 py-3 px-8 rounded-full shadow-2xl mt-4"
+            className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 backdrop-blur-md bg-padel-charcoal/20 border border-white/5 py-3 px-8 rounded-full shadow-2xl"
           >
             <span className="font-cinzel text-[10px] text-white tracking-[0.2em]">WPT STANDARD</span>
             <span className="w-1 h-1 rounded-full bg-padel-emerald" />
@@ -301,6 +327,65 @@ export default function Courts() {
         </div>
 
       </div>
+
+      {/* Grand CTA */}
+      <section className="py-40 relative flex items-center justify-center overflow-hidden bg-padel-base border-t border-white/[0.05]">
+        {/* Cinematic Background Elements */}
+        <div className="absolute inset-0 z-0">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vw] bg-padel-emerald/10 rounded-full blur-[150px] mix-blend-screen pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-t from-padel-base via-transparent to-padel-base z-10"></div>
+          
+          {/* Abstract Grid Pattern */}
+          <div className="absolute inset-0 opacity-[0.03] z-0" style={{ backgroundImage: 'linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
+        </div>
+        
+        <div className="container relative z-20 px-6 text-center max-w-4xl">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+            className="flex flex-col items-center"
+          >
+            {/* Minimal Luxury Eyebrow */}
+            <div className="flex items-center gap-3 mb-8">
+              <span className="w-8 h-px bg-padel-emerald" />
+              <span className="font-inter text-xs uppercase tracking-[0.4em] text-padel-emerald font-semibold">
+                Elite Court Access
+              </span>
+              <span className="w-8 h-px bg-padel-emerald" />
+            </div>
+
+            <h2 className="text-5xl md:text-7xl lg:text-8xl font-cinzel text-white uppercase tracking-tight leading-[1.1] mb-12">
+              Reserve Your Elite <br/>
+              <span className="text-gradient-emerald glow-text-emerald italic font-light">Court Today</span>
+            </h2>
+            
+            <p className="font-inter text-gray-400 text-sm md:text-base max-w-xl mb-12 leading-relaxed">
+              Explore our premium network of indoor and outdoor padel courts across Dubai. Book your court now at XPARK Padel Academy.
+            </p>
+
+            <Link 
+              to="/contact" 
+              className="group relative inline-flex items-center justify-center px-12 py-5 bg-padel-emerald text-padel-base font-inter text-xs uppercase tracking-[0.3em] font-semibold rounded-full overflow-hidden shadow-[0_0_30px_rgba(20,184,89,0.2)] hover:shadow-[0_0_40px_#14B859] hover:bg-white hover:text-padel-base transition-all duration-500"
+            >
+              <span className="relative z-10 flex items-center gap-2">
+                Book A Court
+                <svg className="w-3 h-3 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                </svg>
+              </span>
+              
+              {/* Inner glow sweep */}
+              <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full bg-gradient-to-r from-transparent via-white/50 to-transparent transition-transform duration-700 ease-in-out"></div>
+            </Link>
+          </motion.div>
+        </div>
+
+        {/* Decorative corner lines in background to make it different */}
+        <div className="absolute top-10 left-10 w-20 h-20 border-t border-l border-white/10 pointer-events-none hidden md:block"></div>
+        <div className="absolute bottom-10 right-10 w-20 h-20 border-b border-r border-white/10 pointer-events-none hidden md:block"></div>
+      </section>
     </div>
   );
 }

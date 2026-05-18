@@ -226,7 +226,7 @@ export default function HeroSlideshow() {
           <motion.div variants={textFadeUp} className="flex items-center gap-4 mb-6">
             <span className="w-8 h-px bg-padel-emerald" />
             <span className="font-inter text-xs md:text-sm uppercase tracking-[0.4em] text-padel-emerald font-semibold">
-              Dubai’s Elite Padel Destination
+              UAE'S LARGEST PADEL SERVICE PROVIDER
             </span>
           </motion.div>
 
