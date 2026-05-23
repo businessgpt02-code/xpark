@@ -18,7 +18,7 @@ export default function Navbar() {
   const navLinks = [
     { name: 'Home', path: '/' },
     { name: 'About', path: '/about' },
-    { name: 'Courts', path: '/courts' },
+    { name: 'Padel Courts Location', path: '/courts' },
     { name: 'Contact', path: '/contact' }
   ];
 

@@ -43,12 +43,6 @@ const icons = {
       <path d="M12 3c0 1.1.9 2 2 2" />
     </svg>
   ),
-  'Covid Safety': (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" className="w-full h-full">
-      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-      <path d="M9 12l2 2 4-4" />
-    </svg>
-  ),
   'Clean Courts': (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" className="w-full h-full">
       <path d="M3 12h18" />
@@ -87,11 +81,6 @@ const facilities = [
     name: 'Washrooms',
     desc: 'Luxury changing rooms and showers — always pristine.',
     color: 'from-emerald-500/10 to-transparent',
-  },
-  {
-    name: 'Covid Safety',
-    desc: 'Sanitisation protocols and air-purified court zones.',
-    color: 'from-emerald-500/8 to-transparent',
   },
   {
     name: 'Clean Courts',
@@ -298,8 +287,8 @@ export default function FacilitiesSection() {
           ))}
         </ul>
 
-        {/* Second row — 3 cards centred on desktop */}
-        <ul className="mt-4 lg:mt-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5 lg:mx-auto lg:max-w-[75%]">
+        {/* Second row — 2 cards centred on desktop */}
+        <ul className="mt-4 lg:mt-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 lg:gap-5 lg:mx-auto lg:max-w-[50%]">
           {facilities.slice(4).map((facility, i) => (
             <FacilityCard key={facility.name} facility={facility} index={i + 4} />
           ))}

@@ -10,15 +10,12 @@ export default function Footer() {
           
           {/* Brand Column */}
           <div className="md:col-span-5 flex flex-col items-start">
-            <Link to="/" className="flex items-center gap-3 group mb-8">
-              <div className="w-10 h-10 rounded-full border border-padel-emerald/30 flex items-center justify-center bg-padel-emerald/5 group-hover:bg-padel-emerald/20 transition-all duration-500 relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-tr from-padel-emerald/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <span className="font-cinzel font-bold text-padel-emerald text-xl relative z-10">X</span>
-              </div>
-              <div className="flex flex-col">
-                <span className="font-cinzel font-bold text-lg tracking-[0.2em] text-white leading-none">XPARK</span>
-                <span className="font-inter text-[8px] tracking-[0.3em] text-padel-emerald uppercase mt-1">Padel Academy</span>
-              </div>
+            <Link to="/" className="flex items-center group mb-8" aria-label="XPARK Home">
+              <img 
+                src="/padel.png" 
+                alt="XPARK Logo" 
+                className="h-28 md:h-36 w-auto object-contain transition-transform duration-500 group-hover:scale-[1.03]"
+              />
             </Link>
             <p className="text-gray-500 font-inter text-xs leading-[2] max-w-sm uppercase tracking-widest">
               The apex of professional padel in the United Arab Emirates. Where architectural mastery meets athletic supremacy.
@@ -29,13 +26,18 @@ export default function Footer() {
           <div className="md:col-span-3">
             <h4 className="font-cinzel text-white mb-8 uppercase tracking-[0.2em] text-sm">Navigation</h4>
             <ul className="flex flex-col gap-4">
-              {['Home', 'About', 'Courts', 'Contact'].map((item) => (
-                <li key={item}>
+              {[
+                { name: 'Home', path: '/' },
+                { name: 'About', path: '/about' },
+                { name: 'Padel Courts Location', path: '/courts' },
+                { name: 'Contact', path: '/contact' }
+              ].map((item) => (
+                <li key={item.name}>
                   <Link 
-                    to={item === 'Home' ? '/' : `/${item.toLowerCase()}`}
+                    to={item.path}
                     className="text-gray-500 text-xs font-inter uppercase tracking-[0.2em] hover:text-white transition-colors duration-500"
                   >
-                    {item}
+                    {item.name}
                   </Link>
                 </li>
               ))}

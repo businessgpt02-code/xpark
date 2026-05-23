@@ -42,6 +42,8 @@ export default function Courts() {
     const isIndoor = loc.type.toLowerCase().includes("indoor") || loc.courts.toLowerCase().includes("ac");
     return {
       name: "XPARK " + loc.name,
+      specificLocation: loc.name,
+      academyName: "XPARK PADEL ACADEMY MIDDLE EAST",
       category: isIndoor ? "Indoor / Climate-Controlled" : "Outdoor / Elite Venue",
       courtsCount: loc.courts,
       timings: "06:00 AM - 12:00 AM",
@@ -243,7 +245,7 @@ export default function Courts() {
                   {/* Background Court Image */}
                   <img 
                     src={loc.image} 
-                    alt={`${loc.name} - Premium Padel Court Dubai`}
+                    alt={`${loc.academyName} ${loc.specificLocation} - Premium Padel Court Dubai`}
                     className="w-full h-full object-cover transition-transform duration-700 ease-[0.16,1,0.3,1] group-hover/image:scale-105"
                   />
 
@@ -259,9 +261,14 @@ export default function Courts() {
                   <div className="absolute inset-0 bg-gradient-to-r from-padel-emerald/[0.01] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
                   {/* Location Title */}
-                  <h3 className="font-cinzel text-xl md:text-2xl text-white uppercase tracking-wide group-hover:text-padel-emerald transition-colors duration-300 mb-6">
-                    {loc.name}
-                  </h3>
+                  <div className="mb-6">
+                    <span className="font-cinzel text-[10px] md:text-xs text-padel-emerald uppercase tracking-[0.25em] font-semibold block mb-1.5">
+                      {loc.academyName}
+                    </span>
+                    <h3 className="font-cinzel text-xl md:text-2xl text-white uppercase tracking-wide group-hover:text-padel-emerald transition-colors duration-300">
+                      Location: {loc.specificLocation}
+                    </h3>
+                  </div>
 
                   <div className="w-full h-px bg-white/[0.05] mb-6" />
 
