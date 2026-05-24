@@ -6,6 +6,7 @@ import About from './pages/About';
 import Courts from './pages/Courts';
 import Contact from './pages/Contact';
 import ScrollToTop from './components/ScrollToTop';
+import WhatsAppButton from './components/WhatsAppButton';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         </Routes>
       </main>
       <Footer />
+      <WhatsAppButton />
     </div>
   );
 }
