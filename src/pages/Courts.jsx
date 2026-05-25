@@ -146,10 +146,10 @@ export default function Courts() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.3, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
-            className="text-[11vw] md:text-[8vw] lg:text-[6.5vw] font-cinzel text-white uppercase leading-[0.95] tracking-tight mb-6"
+            className="text-4xl sm:text-6xl md:text-[8vw] lg:text-[6.5vw] font-cinzel text-white uppercase leading-[0.95] tracking-tight mb-6"
           >
             Premium Padel <br />
-            <span className="text-gradient-emerald glow-text-emerald font-light italic text-[12vw] md:text-[9vw] lg:text-[7vw]">Courts Dubai.</span>
+            <span className="text-gradient-emerald glow-text-emerald font-light italic text-4xl sm:text-6xl md:text-[9vw] lg:text-[7vw]">Courts Dubai.</span>
           </motion.h1>
 
           {/* SEO Structured Subtitle/Description */}
@@ -157,7 +157,7 @@ export default function Courts() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
-            className="font-inter text-sm md:text-base text-gray-300 leading-relaxed max-w-2xl mb-8"
+            className="font-inter text-xs sm:text-sm md:text-base text-gray-300 leading-relaxed max-w-2xl mb-8"
           >
             Book the best professional padel courts in Dubai at XPARK Padel Academy. We offer premium indoor and climate-controlled courts, world-class outdoor venues, and top-tier facilities across the UAE.
           </motion.p>
@@ -167,13 +167,13 @@ export default function Courts() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.35 }}
-            className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 backdrop-blur-md bg-padel-charcoal/20 border border-white/5 py-3 px-8 rounded-full shadow-2xl"
+            className="flex flex-wrap items-center justify-center gap-3 sm:gap-6 backdrop-blur-md bg-padel-charcoal/20 border border-white/5 py-2.5 px-6 sm:py-3 sm:px-8 rounded-full shadow-2xl text-[8px] sm:text-[10px]"
           >
-            <span className="font-cinzel text-[10px] text-white tracking-[0.2em]">WPT STANDARD</span>
+            <span className="font-cinzel text-white tracking-[0.2em]">WPT STANDARD</span>
             <span className="w-1 h-1 rounded-full bg-padel-emerald" />
-            <span className="font-cinzel text-[10px] text-white tracking-[0.2em]">INDOOR & OUTDOOR</span>
+            <span className="font-cinzel text-white tracking-[0.2em]">INDOOR & OUTDOOR</span>
             <span className="w-1 h-1 rounded-full bg-padel-emerald" />
-            <span className="font-cinzel text-[10px] text-white tracking-[0.2em]">ELITE EXPERIENCE</span>
+            <span className="font-cinzel text-white tracking-[0.2em]">ELITE EXPERIENCE</span>
           </motion.div>
         </div>
 
@@ -240,7 +240,7 @@ export default function Courts() {
               >
                 
                 {/* Visual Hub Image Wrapper */}
-                <div className="h-[250px] md:h-[280px] w-full relative overflow-hidden group/image z-10">
+                <div className="h-[200px] sm:h-[250px] md:h-[280px] w-full relative overflow-hidden group/image z-10">
                   
                   {/* Background Court Image */}
                   <img 
@@ -255,29 +255,29 @@ export default function Courts() {
                 </div>
 
                 {/* Card Content Hub */}
-                <div className="p-8 flex flex-col flex-1 z-10 relative">
+                <div className="p-5 sm:p-8 flex flex-col flex-1 z-10 relative">
                   
                   {/* Ambient Card glow sweep on hover */}
                   <div className="absolute inset-0 bg-gradient-to-r from-padel-emerald/[0.01] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
                   {/* Location Title */}
-                  <div className="mb-6">
-                    <span className="font-cinzel text-[10px] md:text-xs text-padel-emerald uppercase tracking-[0.25em] font-semibold block mb-1.5">
+                  <div className="mb-4 sm:mb-6">
+                    <span className="font-cinzel text-[9px] sm:text-[10px] md:text-xs text-padel-emerald uppercase tracking-[0.25em] font-semibold block mb-1.5">
                       {loc.academyName}
                     </span>
-                    <h3 className="font-cinzel text-xl md:text-2xl text-white uppercase tracking-wide group-hover:text-padel-emerald transition-colors duration-300">
-                      Location: {loc.specificLocation}
+                    <h3 className="font-cinzel text-base sm:text-lg md:text-2xl text-white uppercase tracking-wide group-hover:text-padel-emerald transition-colors duration-300">
+                      {loc.specificLocation}
                     </h3>
                   </div>
 
-                  <div className="w-full h-px bg-white/[0.05] mb-6" />
+                  <div className="w-full h-px bg-white/[0.05] mb-4 sm:mb-6" />
 
                   {/* Feature Tag pills wrapper */}
-                  <div className="flex flex-wrap gap-2 mb-8">
+                  <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-6 sm:mb-8">
                     {loc.features.map((feat, idx) => (
                       <span 
                         key={idx} 
-                        className="font-inter text-[9px] text-gray-400 bg-white/[0.02] border border-white/5 px-2.5 py-1 rounded-md transition-colors duration-300 hover:border-padel-emerald/20 hover:text-white"
+                        className="font-inter text-[8px] sm:text-[9px] text-gray-400 bg-white/[0.02] border border-white/5 px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-md transition-colors duration-300 hover:border-padel-emerald/20 hover:text-white"
                       >
                         {feat}
                       </span>
@@ -285,26 +285,26 @@ export default function Courts() {
                   </div>
 
                   {/* Pricing row & Premium Dual CTA Buttons */}
-                  <div className="mt-auto pt-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+                  <div className="mt-auto pt-2 sm:pt-4 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 sm:gap-6">
                     
                     {/* Price Tag */}
                     <div className="flex flex-col">
                       <span className="font-mono text-[8px] text-gray-500 uppercase tracking-widest">Court Rates</span>
                       <div className="flex items-baseline gap-1">
-                        <span className="font-cinzel text-xl text-padel-emerald font-bold">{loc.price}</span>
-                        <span className="font-inter text-[10px] text-gray-500">/ Hour</span>
+                        <span className="font-cinzel text-lg sm:text-xl text-padel-emerald font-bold">{loc.price}</span>
+                        <span className="font-inter text-[9px] sm:text-[10px] text-gray-500">/ Hour</span>
                       </div>
                     </div>
 
                     {/* Dual Action CTA Grid */}
-                    <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full lg:w-auto mt-4 sm:mt-0">
+                    <div className="flex flex-row items-center gap-3 w-full sm:w-auto mt-2 sm:mt-0">
                       
                       {/* Explore Venue wireframe */}
                       <a 
                         href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(loc.name + " Dubai")}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-full sm:w-auto border border-white/10 hover:border-padel-emerald text-white hover:text-padel-emerald font-inter text-[10px] uppercase tracking-wider px-4 py-3 rounded-lg flex items-center justify-center gap-1.5 transition-all duration-300"
+                        className="flex-1 sm:flex-none border border-white/10 hover:border-padel-emerald text-white hover:text-padel-emerald font-inter text-[9px] sm:text-[10px] uppercase tracking-wider px-3 py-2.5 sm:px-4 sm:py-3 rounded-lg flex items-center justify-center gap-1.5 transition-all duration-300"
                       >
                         <MapPin size={11} className="shrink-0" />
                         <span className="whitespace-nowrap">Google Maps</span>
@@ -315,7 +315,7 @@ export default function Courts() {
                         href="https://wa.me/971554488072"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-full sm:w-auto bg-padel-emerald text-padel-base font-semibold hover:bg-white font-inter text-[10px] uppercase tracking-wider px-4 py-3 rounded-lg flex items-center justify-center gap-1.5 shadow-[0_0_20px_rgba(20,184,89,0.15)] hover:shadow-[0_0_28px_rgba(255,255,255,0.25)] transition-all duration-300"
+                        className="flex-1 sm:flex-none bg-padel-emerald text-padel-base font-semibold hover:bg-white font-inter text-[9px] sm:text-[10px] uppercase tracking-wider px-3 py-2.5 sm:px-4 sm:py-3 rounded-lg flex items-center justify-center gap-1.5 shadow-[0_0_20px_rgba(20,184,89,0.15)] hover:shadow-[0_0_28px_rgba(255,255,255,0.25)] transition-all duration-300"
                       >
                         <span className="whitespace-nowrap">Book Court</span>
                         <ArrowRight size={11} className="shrink-0" />
