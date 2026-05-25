@@ -209,20 +209,20 @@ export default function Contact() {
                   <form className="flex flex-col gap-8" onSubmit={handleSubmit}>
                     
                     {/* Custom Input Group */}
-                    <div className="relative group">
+                    <div className="relative group mt-4">
                       <input 
                         type="text" 
                         id="fullName"
                         name="name"
                         required
                         disabled={status === 'submitting'}
-                        className="w-full bg-transparent border-b border-white/20 pb-4 text-white font-inter text-base focus:outline-none focus:border-padel-emerald transition-colors peer placeholder-transparent disabled:opacity-50"
-                        placeholder="Full Name"
+                        className="w-full bg-transparent border-b border-white/20 pb-4 text-white font-inter text-base focus:outline-none focus:border-padel-emerald transition-colors disabled:opacity-50"
+                        placeholder="Enter your full name"
                       />
-                      <label htmlFor="fullName" className="absolute left-0 top-0 text-gray-500 font-inter text-xs uppercase tracking-widest peer-placeholder-shown:top-1 peer-placeholder-shown:text-sm peer-placeholder-shown:text-gray-500 peer-focus:-top-5 peer-focus:text-xs peer-focus:text-padel-emerald transition-all duration-300">
+                      <label htmlFor="fullName" className="absolute left-0 -top-5 text-gray-500 font-inter text-xs uppercase tracking-widest transition-all duration-300 group-focus-within:text-padel-emerald">
                         Full Name
                       </label>
-                      <div className="absolute bottom-0 left-0 w-0 h-[2px] bg-padel-emerald transition-all duration-500 ease-out peer-focus:w-full"></div>
+                      <div className="absolute bottom-0 left-0 w-0 h-[2px] bg-padel-emerald transition-all duration-500 ease-out group-focus-within:w-full"></div>
                     </div>
 
                     <div className="relative group mt-4">
@@ -232,13 +232,13 @@ export default function Contact() {
                         name="email"
                         required
                         disabled={status === 'submitting'}
-                        className="w-full bg-transparent border-b border-white/20 pb-4 text-white font-inter text-base focus:outline-none focus:border-padel-emerald transition-colors peer placeholder-transparent disabled:opacity-50"
-                        placeholder="Email Address"
+                        className="w-full bg-transparent border-b border-white/20 pb-4 text-white font-inter text-base focus:outline-none focus:border-padel-emerald transition-colors disabled:opacity-50"
+                        placeholder="Enter your email address"
                       />
-                      <label htmlFor="emailAddress" className="absolute left-0 top-0 text-gray-500 font-inter text-xs uppercase tracking-widest peer-placeholder-shown:top-1 peer-placeholder-shown:text-sm peer-placeholder-shown:text-gray-500 peer-focus:-top-5 peer-focus:text-xs peer-focus:text-padel-emerald transition-all duration-300">
+                      <label htmlFor="emailAddress" className="absolute left-0 -top-5 text-gray-500 font-inter text-xs uppercase tracking-widest transition-all duration-300 group-focus-within:text-padel-emerald">
                         Email Address
                       </label>
-                      <div className="absolute bottom-0 left-0 w-0 h-[2px] bg-padel-emerald transition-all duration-500 ease-out peer-focus:w-full"></div>
+                      <div className="absolute bottom-0 left-0 w-0 h-[2px] bg-padel-emerald transition-all duration-500 ease-out group-focus-within:w-full"></div>
                     </div>
 
                     <div className="relative group mt-4">
@@ -254,7 +254,7 @@ export default function Contact() {
                         <option value="Events" className="bg-padel-charcoal text-white">Private Events</option>
                         <option value="Other" className="bg-padel-charcoal text-white">Other Inquiry</option>
                       </select>
-                      <label htmlFor="inquiryType" className="absolute left-0 -top-5 text-gray-500 font-inter text-xs uppercase tracking-widest transition-all duration-300">
+                      <label htmlFor="inquiryType" className="absolute left-0 -top-5 text-gray-500 font-inter text-xs uppercase tracking-widest transition-all duration-300 group-focus-within:text-padel-emerald">
                         Nature of Inquiry
                       </label>
                       {/* Custom Arrow */}
